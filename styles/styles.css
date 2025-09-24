@@ -1,0 +1,154 @@
+:root {
+  --c1: #F4FDFF; /* muy claro */
+  --c2: #D5F1FA; 
+  --c3: #1EA7E1; /* celeste brillante */
+  --c4: #236C94; 
+  --c5: #194C6B; 
+  --c6: #15384E; 
+  --c7: #0F273A; /* azul más oscuro */
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--c1);
+  color: var(--c7);
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--c7);
+  color: white;
+  padding: 15px 30px;
+}
+/* BOTONES */
+.btn {
+  background: var(--c3);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 8px;   /* 👈 agrega espacio a los lados */
+}
+
+.btn:hover {
+  background: var(--c2);
+  color: var(--c7);
+}
+
+/* LOGO */
+.logo img {
+  height: 90px;   /* ajustá según lo necesites */
+  width: auto;
+}
+
+.search-bar input {
+  padding: 12px 350px;
+  border-radius: 25px;
+  border: 1px solid var(--c3);
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.user-actions {
+  display: flex;
+  gap: 12px;  /* 👈 espacio entre cada botón */
+}
+
+/* .user-actions a {
+  padding-right: 10px;
+} */
+
+.user-actions button {
+  background: var(--c3);
+  border: none;
+  padding: 8px 16px;
+  margin-left: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: center;
+  background: var(--c6);
+  padding: 12px;
+  gap: 140px;
+}
+
+.nav button {
+  background: var(--c3);
+  border: none;
+  padding: 14px 40px;
+  border-radius: 1000px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav button:hover {
+  background: var(--c2);
+  color: var(--c7);
+}
+
+/* HERO */
+.hero {
+  background: var(--c7);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* PRODUCTOS */
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 70px;
+  padding: 60px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.5s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--c6);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+}
+.footer a {
+  color: var(--c2);
+  margin: 0 12px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.footer a:hover {
+  color: var(--c3);
+}
