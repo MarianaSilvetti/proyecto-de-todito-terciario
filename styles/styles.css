@@ -12,11 +12,7 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #000000;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 0%,
-    var(--c5) 54%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, var(--c5) 54%);
   color: var(--c7);
 }
 
@@ -183,7 +179,7 @@ header {
   font-size: 1rem;
   line-height: 1rem;
   margin: 0 5px;
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .product-info p {
@@ -220,19 +216,114 @@ header {
 }
 
 /* FOOTER */
-.footer {
-  background: var(--c6);
+footer {
   color: white;
   text-align: center;
-  padding: 30px 20px;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
-.footer a {
+footer a {
   color: var(--c2);
   margin: 0 12px;
   text-decoration: none;
   transition: 0.3s;
 }
-.footer a:hover {
+footer a:hover {
   color: var(--c3);
+}
+
+.footer-section {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 40px;
+  padding: 40px 20px;
+  align-items: center;
+}
+
+.footer-section .footer-section-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-section .footer-section-item i {
+  font-size: 2.5rem;
+}
+
+.footer-section-item .footer-section-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  color: var(--c1);
+}
+
+.footer-section-item .footer-section-text p {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.footer-section-item .footer-section-text span {
+  font-size: 0.8rem;
+  color: var(--c2);
+  font-weight: 400;
+}
+
+.footer-links {
+  background: var(--c6);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 40px 0;
+  align-items: center;
+}
+
+.footer-links .footer-links-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 100px;
+  width: 50%;
+}
+
+.footer-links .footer-links-columns div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-social p {
+  margin: 10px 0;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-social i {
+  display: flex;
+  font-size: 1.5rem;
+  width: 35px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  background-color: var(--c7);
+  border-radius: 50%;
+}
+
+.footer-legal {
+  background: var(--c7);
+  padding: 50px 0;
 }
