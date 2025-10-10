@@ -28,7 +28,9 @@
       </div>
 
       <div class="user-actions">
-        <a href="login.html" class="btn login-icon"><i class="fa-solid fa-right-to-bracket"></i></a>
+        <a href="login.html" class="btn login-icon"
+          ><i class="fa-solid fa-right-to-bracket"></i
+        ></a>
         <a href="registro.html" class="btn login-text">Creá tu cuenta</a>
         <a href="login.html" class="btn login-text">Ingresá</a>
         <a href="carrito.html" class="btn"
@@ -48,14 +50,40 @@
     </nav>
 
     <!-- carrusel -->
-    <div class="carrusel">
-  <div class="imagenes">
-    <img src="/images/BANNER1.png" alt="Imagen 1">
-    <img src="/images/BANNER2.png" alt="Imagen 2">
-    <img src="/images/BANNER3.png" alt="Imagen 3">
-    <img src="/images/BANNER4.png" alt="Imagen 4">
-  </div>
-</div>
+    <div class="carrusel" aria-label="Carrusel de imágenes">
+      <button class="nav-btn left" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="nav-btn right" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+
+      <div class="imagenes">
+        <img src="/images/BANNER1.png" alt="Banner 1" />
+        <img src="/images/BANNER2.png" alt="Banner 2" />
+        <img src="/images/BANNER3.png" alt="Banner 3" />
+        <img src="/images/BANNER4.png" alt="Banner 4" />
+      </div>
+
+      <div class="dots" role="tablist" aria-label="Indicadores del carrusel">
+        <button
+          class="dot active"
+          data-index="0"
+          aria-label="Ir a la imagen 1"
+        ></button>
+        <button
+          class="dot"
+          data-index="1"
+          aria-label="Ir a la imagen 2"
+        ></button>
+        <button
+          class="dot"
+          data-index="2"
+          aria-label="Ir a la imagen 3"
+        ></button>
+        <button
+          class="dot"
+          data-index="3"
+          aria-label="Ir a la imagen 4"
+        ></button>
+      </div>
+    </div>
 
     <!-- PRODUCTOS -->
     <main class="productos">
@@ -239,4 +267,5 @@
     src="https://kit.fontawesome.com/38dd05b7b5.js"
     crossorigin="anonymous"
   ></script>
+  <script src="/scripts/carrusel.js"></script>
 </html>
