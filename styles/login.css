@@ -31,6 +31,17 @@ body {
   );
 }
 
+.logo-container {
+  text-align: center;
+  margin: 12px 0;
+}
+
+.logo-container img {
+  width: 160px;
+  height: auto;
+  display: inline-block;
+}
+
 /* Fondo de la izquierda */
 .right-background {
   background-image: url('/images/login01.png');
