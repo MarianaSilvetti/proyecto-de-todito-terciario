@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h2><img src="images (1).jpeg" alt="logo">Recuperar Contraseña</h2>
+        
+        <form id="password-form" action="#" method="POST" onsubmit="mostrarMensaje(); return false;">
+            <label for="email">Introduce tu correo electrónico institucional:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+
+        <!-- Mensaje de confirmación que se mostrará después de enviar -->
+        <div id="confirmation-message" style="display:none; margin-top: 20px;">
+            <p>Se ha enviado un mensaje de verificación al siguiente correo: <span id="user-email"></span>.</p>
+        </div>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            var email = document.getElementById("email").value;
+            document.getElementById("user-email").innerText = email;
+            document.getElementById("confirmation-message").style.display = "block";
+            document.getElementById("password-form").style.display = "none";
+        }
+    </script>
+</body>
+</html>

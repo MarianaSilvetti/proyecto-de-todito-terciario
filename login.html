@@ -3,9 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>De Todito - Login </title>
+    <link rel="stylesheet" href="./styles/login.css" />
+    <title>De Todito - Login</title>
   </head>
   <body>
-    
+    <div class="full-container">
+      <div class="login-container">
+        <div class="form-container">
+          <form class="login-form" action="" method="POST">
+            <div class="logo-container">
+              <img
+                src="/images/Logo-Web-De-Todito.png"
+                alt="Logo De Todito"
+                loading="lazy"
+              />
+            </div>
+            <h1 class="login-title">¡BIENVENIDO!</h1>
+
+            <div class="form-input">
+              <label for="username" class="form-label">Email</label>
+              <input
+                id="username"
+                name="username"
+                class="form-control"
+                placeholder="Ingresa tu email"
+                required
+              />
+            </div>
+
+            <!-- Password -->
+            <div class="form-input">
+              <label for="password" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                placeholder="Ingresa tu clave"
+                required
+              />
+            </div>
+
+            <div class="login-actions">
+              <div class="remember">
+                <input type="checkbox" name="remember" id="remember" />
+                <label for="remember">Recordarme</label>
+              </div>
+              <div>
+                <a href="" class="forgot-password">Olvidé mi clave</a>
+              </div>
+            </div>
+
+            <div class="form-buttons">
+              <button type="submit" class="btn btn-login">Ingresar</button>
+              <button type="button" class="btn btn-google">
+                <img src="/images/google.png" alt="Google" />
+                Iniciar con Google
+              </button>
+              <div class="register">
+                <p>
+                  ¿No estás registrado?
+                  <a class="register-link" href="">¡Hazlo ahora!</a>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- <div class="right-background"></div> -->
+      </div>
+    </div>
   </body>
 </html>
