@@ -297,3 +297,18 @@ body {
 .register .register-link:hover {
   color: #6ca0ff;
 }
+
+.error {
+  color: #c62828;
+  font-size: 0.875rem;
+  margin-top: 6px;
+  display: none; /* se muestra desde JS cuando hay error */
+}
+.input-error {
+  border-color: #c62828 !important;
+  box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.08);
+}
+.form-input {
+  display: flex;
+  flex-direction: column;
+}

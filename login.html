@@ -10,7 +10,7 @@
     <div class="full-container">
       <div class="login-container">
         <div class="form-container">
-          <form class="login-form" action="" method="POST">
+          <form class="login-form" action="" method="POST" novalidate>
             <div class="logo-container">
               <img
                 src="/images/Logo-Web-De-Todito.png"
@@ -22,26 +22,43 @@
 
             <div class="form-input">
               <label for="username" class="form-label">Email</label>
+              <!-- removed required attribute to let JS manejar validación -->
               <input
                 id="username"
                 name="username"
                 class="form-control"
                 placeholder="Ingresa tu email"
-                required
+                type="email"
+                autocomplete="username"
               />
+              <span
+                class="error"
+                id="username-error"
+                role="alert"
+                aria-live="polite"
+                >Por favor ingresá tu email</span
+              >
             </div>
 
             <!-- Password -->
             <div class="form-input">
               <label for="password" class="form-label">Contraseña</label>
+              <!-- removed required attribute to let JS manejar validación -->
               <input
                 type="password"
                 id="password"
                 name="password"
                 class="form-control"
                 placeholder="Ingresa tu clave"
-                required
+                autocomplete="current-password"
               />
+              <span
+                class="error"
+                id="password-error"
+                role="alert"
+                aria-live="polite"
+                >Por favor ingresá tu contraseña</span
+              >
             </div>
 
             <div class="login-actions">
@@ -72,5 +89,6 @@
         <!-- <div class="right-background"></div> -->
       </div>
     </div>
+    <script src="/scripts/validacion.js"></script>
   </body>
 </html>
