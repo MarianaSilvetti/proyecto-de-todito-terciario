@@ -380,3 +380,39 @@ footer a:hover {
     width: 80%;
   }
 }
+
+.carrusel {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    aspect-ratio: 3 / 1; /* ancho 3 veces la altura */
+}
+
+
+.imagenes {
+    display: flex;
+    width: calc(100% * 4); /* si tenés 4 imágenes */
+    height: 100%;
+    animation: mover 30s infinite linear; /* antes 12s -> ahora 30s */
+}
+
+
+.imagenes img {
+    width: 100%;
+    max-height: 200px; /* altura máxima */
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
+
+@keyframes mover {
+    0% { transform: translateX(0%); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(0%); }
+}
