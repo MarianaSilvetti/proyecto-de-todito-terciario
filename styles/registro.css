@@ -41,6 +41,15 @@ img.logo {
   gap: 1rem;
 }
 
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+}
+
 h2 {
   margin-bottom: 20px;
   color: #ffff;
@@ -60,4 +69,23 @@ button, input[type="submit"] {
 a {
   color: #0d6efd;
   text-decoration: none;
+}
+
+.form-input {
+  margin-bottom: 1.5rem;
+}
+
+:root {
+  --btn-bg: #10517b;
+  --btn-shadow: 0 8px 10px rgba(25, 72, 105, 1);
+  --label-font: 'Poppins', sans-serif;
+}
+
+.Registro.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffff;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 5rem;
 }
