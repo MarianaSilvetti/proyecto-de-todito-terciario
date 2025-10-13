@@ -236,9 +236,9 @@ nav button:hover {
 .productos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px; /* reducido para que no desborde */
+  gap: 50px 80px; /* reducido para que no desborde */
   padding: 40px; /* menor padding en pantallas grandes */
-  max-width: 1200px; /* limita el ancho total */
+  max-width: 1400px; /* limita el ancho total */
   margin: 0 auto; /* centra el grid */
 }
 
@@ -443,6 +443,11 @@ footer a:hover {
 .footer-legal {
   background: var(--c7);
   padding: 50px 0;
+}
+@media screen and (max-width: 1400px) {
+  .productos {
+    gap: 30px;
+  }
 }
 
 @media screen and (max-width: 1020px) {
