@@ -232,25 +232,14 @@ nav button:hover {
   user-select: none;
 }
 
-/* ajustes responsivos */
-@media screen and (max-width: 480px) {
-  .carrusel .nav-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
-  }
-  .carrusel .dot {
-    width: 8px;
-    height: 8px;
-  }
-}
-
-/* PRODUCTOS */
+/* PRODUCTOS: por defecto (pantallas grandes) mostrar 4 columnas y ajustar padding/gap */
 .productos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 70px;
-  padding: 60px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px; /* reducido para que no desborde */
+  padding: 40px; /* menor padding en pantallas grandes */
+  max-width: 1200px; /* limita el ancho total */
+  margin: 0 auto; /* centra el grid */
 }
 
 .card {
@@ -456,6 +445,15 @@ footer a:hover {
   padding: 50px 0;
 }
 
+@media screen and (max-width: 1020px) {
+  .productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 70px;
+    padding: 60px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .login-text {
     display: none;
@@ -485,5 +483,18 @@ footer a:hover {
 
   .search-bar input {
     width: 80%;
+  }
+}
+
+/* ajustes responsivos */
+@media screen and (max-width: 480px) {
+  .carrusel .nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  .carrusel .dot {
+    width: 8px;
+    height: 8px;
   }
 }
