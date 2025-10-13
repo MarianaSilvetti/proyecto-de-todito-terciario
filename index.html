@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>De Todito - Polirubro</title>
-
+    <link rel="shortcut icon" href="images/DeTodito-logo-sin.png" />
     <link rel="stylesheet" href="/styles/styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
@@ -51,14 +51,37 @@
 
     <!-- carrusel -->
     <div class="carrusel" aria-label="Carrusel de imágenes">
-      <button class="nav-btn left" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
-      <button class="nav-btn right" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+      <button class="nav-btn left" aria-label="Anterior">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="nav-btn right" aria-label="Siguiente">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
 
       <div class="imagenes">
-        <video src="/images/BANNER4.mp4" alt="Banner 4" autoplay muted loop></video>
-        <img src="/images/BANNER1.png" alt="Banner 1" />
-        <img src="/images/BANNER2.png" alt="Banner 2" />
-        <img src="/images/BANNER3.png" alt="Banner 3" />
+        <video
+          src="/images/BANNER1.mp4"
+          alt="Banner 1"
+          autoplay
+          muted
+          loop
+        ></video>
+        <video
+          src="/images/BANNER2.mp4"
+          alt="Banner 2"
+          autoplay
+          muted
+          loop
+        ></video>
+        <video
+          src="/images/BANNER3.mp4"
+          alt="Banner 3"
+          autoplay
+          muted
+          loop
+        ></video>
+        <img src="/images/BANNER2.png" alt="Banner 4" />
+        <img src="/images/BANNER3.png" alt="Banner 5" />
       </div>
 
       <div class="dots" role="tablist" aria-label="Indicadores del carrusel">
@@ -82,6 +105,11 @@
           data-index="3"
           aria-label="Ir a la imagen 4"
         ></button>
+        <button
+          class="dot"
+          data-index="4"
+          aria-label="Ir a la imagen 5"
+        ></button>
       </div>
     </div>
 
@@ -89,11 +117,11 @@
     <main class="productos">
       <div class="card">
         <div class="card-image">
-          <img src="/images/BANNER1.png" alt="Acolchado" />
+          <img src="/images/bolso-matero-unicross.jpg" alt="Bolso Matero marca Unicross" />
         </div>
         <div class="card-content">
           <div class="product-info">
-            <h2>Toallón</h2>
+            <h2>Bolso Matero Unicross</h2>
             <p>$17.600</p>
             <h3>3 cuotas sin interés de $21.100,00</h3>
           </div>
@@ -105,11 +133,11 @@
       </div>
       <div class="card">
         <div class="card-image">
-          <img src="/images/toallon.jpg" alt="Acolchado" />
+          <img src="images/bufanda.jpg" alt="Bufanda marca" />
         </div>
         <div class="card-content">
           <div class="product-info">
-            <h2>Acolchado Doble Faz Love & Home</h2>
+            <h2>Bufanda</h2>
             <p>$63.300</p>
             <h3>3 cuotas sin interés de $21.100,00</h3>
           </div>
@@ -121,11 +149,11 @@
       </div>
       <div class="card">
         <div class="card-image">
-          <img src="/images/BANNER2.png" alt="Acolchado" />
+          <img src="/images/paraguas.jpg" alt="Paraguas Trendy" />
         </div>
         <div class="card-content">
           <div class="product-info">
-            <h2>Acolchado Doble Faz Love & Home</h2>
+            <h2>Paraguas Trendy</h2>
             <p>$63.300</p>
             <h3>3 cuotas sin interés de $21.100,00</h3>
           </div>
@@ -137,12 +165,12 @@
       </div>
       <div class="card">
         <div class="card-image">
-          <img src="/images/toallon.jpg" alt="Acolchado" />
+          <img src="/images/billetera.jpg" alt="Billetera" />
         </div>
         <div class="card-content">
           <div class="product-info">
             <h2 data-full="Acolchado Doble Faz Love & Home color azúl">
-              Acolchado Doble Faz Love & Home color azúl
+              Billetera
             </h2>
             <p>$63.300</p>
             <h3>3 cuotas sin interés de $21.100,00</h3>
@@ -155,11 +183,11 @@
       </div>
       <div class="card">
         <div class="card-image">
-          <img src="/images/toallon.jpg" alt="Acolchado" />
+          <img src="/images/toalla.jpg" alt="Toallas" />
         </div>
         <div class="card-content">
           <div class="product-info">
-            <h2>Acolchado Doble Faz Love & Home color rojo</h2>
+            <h2>Toalla</h2>
             <p>$63.300</p>
             <h3>3 cuotas sin interés de $21.100,00</h3>
           </div>
@@ -171,11 +199,11 @@
       </div>
       <div class="card">
         <div class="card-image">
-          <img src="/images/toallon.jpg" alt="Acolchado" />
+          <img src="/images/manton.jpg" alt="Manton" />
         </div>
         <div class="card-content">
           <div class="product-info">
-            <h2>Acolchado Doble Faz Love & Home</h2>
+            <h2>Manton</h2>
             <p>$63.300</p>
             <h3>3 cuotas sin interés de $21.100,00</h3>
           </div>
@@ -187,11 +215,11 @@
       </div>
       <div class="card">
         <div class="card-image">
-          <img src="/images/toallon.jpg" alt="Acolchado" />
+          <img src="/images/manta-plush-acanalada.jpg" alt="Manta Plush Acanalada" />
         </div>
         <div class="card-content">
           <div class="product-info">
-            <h2>Acolchado Doble Faz Love & Home</h2>
+            <h2>Manta Plush Acanalada</h2>
             <p>$63.300</p>
             <h3>3 cuotas sin interés de $21.100,00</h3>
           </div>
@@ -203,7 +231,7 @@
       </div>
       <div class="card">
         <div class="card-image">
-          <img src="/images/toallon.jpg" alt="Acolchado" />
+          <img src="/images/acolchado.jpg" alt="Acolchado" />
         </div>
         <div class="card-content">
           <div class="product-info">

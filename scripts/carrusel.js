@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     update();
   };
 
-  // === Autoplay (cada 10s) y control de reinicio/pausa ===
-  const AUTOPLAY_MS = 10000;
+  // === Autoplay (cada 6s) y control de reinicio/pausa ===
+  const AUTOPLAY_MS = 6000;
   let autoplayId = null;
 
   const stopAutoplay = () => {
