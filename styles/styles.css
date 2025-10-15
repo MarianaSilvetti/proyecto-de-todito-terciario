@@ -1,11 +1,11 @@
 :root {
-  --c1: #f4fdff; /* muy claro */
+  --c1: #f4fdff;
   --c2: #d5f1fa;
-  --c3: #1ea7e1; /* celeste brillante */
+  --c3: #1ea7e1;
   --c4: #236c94;
   --c5: #194c6b;
   --c6: #15384e;
-  --c7: #0f273a; /* azul más oscuro */
+  --c7: #0f273a;
 }
 
 body {
@@ -124,26 +124,122 @@ nav button:hover {
   color: var(--c2);
 }
 
-/* .category i {
-  left: 0;
-} */
-
-/* HERO */
-.slider {
-  background: var(--c6);
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
-  font-size: 1.5rem;
-  font-weight: 600;
+/* CARRUSEL (actualizado) */
+.carrusel {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4 / 1; /* ancho 4 veces la altura (ajustable) */
+  background: transparent;
 }
 
-/* PRODUCTOS */
+.imagenes {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  animation: none;
+}
+
+.imagenes img {
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.imagenes video {
+  flex: 0 0 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* BOTONES LATERALES (redondos, fondo blanco, flechas) */
+.carrusel .nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--c7);
+  font-weight: 200;
+  font-size: 2rem;
+  z-index: 10;
+  transition: transform 0.15s ease, background 0.15s;
+  padding: 0;
+}
+
+.carrusel .nav-btn.left {
+  left: 4rem;
+}
+.carrusel .nav-btn.right {
+  right: 4rem;
+}
+
+.carrusel .nav-btn:hover {
+  transform: translateY(-50%) scale(1.06);
+  background: #fff;
+}
+
+.carrusel .nav-btn:focus {
+  outline: 3px solid rgba(30, 167, 225, 0.25);
+  outline-offset: 2px;
+}
+
+/* PUNTOS / INDICADORES en la parte inferior dentro de la imagen */
+.carrusel .dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12px;
+  display: flex;
+  gap: 8px;
+  z-index: 12;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrusel .dot {
+  width: 1em;
+  height: 1em;
+  border: 1px;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.418);
+  cursor: pointer;
+  transition: transform 0.18s, background 0.18s;
+}
+
+.carrusel .dot.active {
+  background: #ffffff;
+  transform: scale(1.25);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.418);
+}
+
+.carrusel .nav-btn svg,
+.carrusel .nav-btn span {
+  pointer-events: none;
+  user-select: none;
+}
+
+/* PRODUCTOS: por defecto (pantallas grandes) mostrar 4 columnas y ajustar padding/gap */
 .productos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 70px;
-  padding: 60px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px 80px; /* reducido para que no desborde */
+  padding: 40px; /* menor padding en pantallas grandes */
+  max-width: 1400px; /* limita el ancho total */
+  margin: 0 auto; /* centra el grid */
 }
 
 .card {
@@ -348,6 +444,20 @@ footer a:hover {
   background: var(--c7);
   padding: 50px 0;
 }
+@media screen and (max-width: 1400px) {
+  .productos {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 70px;
+    padding: 60px;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .login-text {
@@ -381,38 +491,15 @@ footer a:hover {
   }
 }
 
-.carrusel {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 10px;
-    position: relative;
-    aspect-ratio: 3 / 1; /* ancho 3 veces la altura */
-}
-
-
-.imagenes {
-    display: flex;
-    width: calc(100% * 4); /* si tenés 4 imágenes */
-    height: 100%;
-    animation: mover 30s infinite linear; /* antes 12s -> ahora 30s */
-}
-
-
-.imagenes img {
-    width: 100%;
-    max-height: 200px; /* altura máxima */
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-
-
-@keyframes mover {
-    0% { transform: translateX(0%); }
-    25% { transform: translateX(-100%); }
-    50% { transform: translateX(-200%); }
-    75% { transform: translateX(-300%); }
-    100% { transform: translateX(0%); }
+/* ajustes responsivos */
+@media screen and (max-width: 480px) {
+  .carrusel .nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  .carrusel .dot {
+    width: 8px;
+    height: 8px;
+  }
 }
