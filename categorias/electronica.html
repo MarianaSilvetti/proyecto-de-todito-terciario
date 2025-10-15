@@ -6,12 +6,51 @@
     <title>Electronica</title>
     <link rel="shortcut icon" href="/images/DeTodito-logo-sin.png" />
     <link rel="stylesheet" href="/styles/categorias.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        <a href="/index.html">
+          <img
+            src="/images/Logo-Web-De-Todito.png"
+            alt="Logo de De Todito Polirubro"
+          />
+        </a>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Encontrá lo que necesitás" />
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="user-actions">
+        <a href="/login.html" class="btn login-icon"
+          ><i class="fa-solid fa-right-to-bracket"></i
+        ></a>
+        <a href="/registro.html" class="btn login-text">Creá tu cuenta</a>
+        <a href="/login.html" class="btn login-text">Ingresá</a>
+        <a href="/carrito.html" class="btn"
+          ><i class="fa-solid fa-bag-shopping"></i
+        ></a>
+      </div>
+    </header>
+
+    <!-- NAV -->
+    <nav>
+      <button class="category">
+        Categorías <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <button>Oferta</button>
+      <button>Vender</button>
+      <button>Ayuda</button>
+    </nav>
+
     <!-- PRODUCTOS -->
     <main class="productos">
       <div class="card">
@@ -35,7 +74,7 @@
       </div>
       <div class="card">
         <div class="card-image">
-          <img src="images/bufanda.jpg" alt="Bufanda marca" />
+          <img src="/images/bufanda.jpg"  alt="Bufanda marca" />
         </div>
         <div class="card-content">
           <div class="product-info">
@@ -196,5 +235,9 @@
         Imágenes diseñadas por<a href="http://www.freepik.es/">Freepik</a>
       </div>
     </footer>
+    <script
+      src="https://kit.fontawesome.com/38dd05b7b5.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
