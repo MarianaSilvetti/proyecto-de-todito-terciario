@@ -36,92 +36,95 @@
               </div>
             </div>
 
-            <!-- TODO: Agregar el javascript en validacion.js para que se validen los campos con los labels rojos -->
-            <!-- Dos columnas: Columna 1 = Nombre, Email. Columna 2 = Apellido, Teléfono -->
-            <div class="two-columns">
-              <div class="column">
-                <div class="form-input">
-                  <label for="name" class="form-label">Nombre</label>
-                  <input
-                    id="name"
-                    name="name"
-                    class="form-control"
-                    placeholder="Ingresa tu nombre"
-                    autocomplete="name"
-                    required
-                  />
-                  <span
-                    class="error"
-                    id="name-error"
-                    role="alert"
-                    aria-live="polite"
-                    >Por favor ingresá tu nombre</span
-                  >
+            <!-- dos filas con dos columnas cada una -->
+            <div class="fields">
+              <div class="rows">
+                <div class="column">
+                  <div class="form-input">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input
+                      id="name"
+                      name="name"
+                      class="form-control"
+                      placeholder="Ingresa tu nombre"
+                      autocomplete="name"
+                    />
+                    <span
+                      class="error"
+                      id="name-error"
+                      role="alert"
+                      aria-live="polite"
+                      >Por favor ingresá tu nombre</span
+                    >
+                  </div>
                 </div>
 
-                <div class="form-input">
-                  <label for="email" class="form-label">Email</label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    class="form-control"
-                    placeholder="tu@ejemplo.com"
-                    autocomplete="email"
-                    required
-                  />
-                  <span
-                    class="error"
-                    id="email-error"
-                    role="alert"
-                    aria-live="polite"
-                    >Por favor ingresá tu email</span
-                  >
+                <div class="column">
+                  <div class="form-input">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input
+                      id="apellido"
+                      name="apellido"
+                      class="form-control"
+                      placeholder="Ingresa tu apellido"
+                      autocomplete="family-name"
+                    />
+                    <span
+                      class="error"
+                      id="apellido-error"
+                      role="alert"
+                      aria-live="polite"
+                      >Por favor ingresá tu apellido</span
+                    >
+                  </div>
                 </div>
               </div>
 
-              <div class="column">
-                <div class="form-input">
-                  <label for="apellido" class="form-label">Apellido</label>
-                  <input
-                    id="apellido"
-                    name="apellido"
-                    class="form-control"
-                    placeholder="Ingresa tu apellido"
-                    autocomplete="family-name"
-                    required
-                  />
-                  <span
-                    class="error"
-                    id="apellido-error"
-                    role="alert"
-                    aria-live="polite"
-                    >Por favor ingresá tu apellido</span
-                  >
+              <div class="rows">
+                <div class="column">
+                  <div class="form-input">
+                    <label for="email" class="form-label">Email</label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      class="form-control"
+                      placeholder="tu@ejemplo.com"
+                      autocomplete="email"
+                    />
+                    <span
+                      class="error"
+                      id="email-error"
+                      role="alert"
+                      aria-live="polite"
+                      >Por favor ingresá tu email</span
+                    >
+                  </div>
                 </div>
 
-                <div class="form-input">
-                  <label for="telefono" class="form-label"
-                    >Número de teléfono</label
-                  >
-                  <input
-                    id="telefono"
-                    name="telefono"
-                    type="tel"
-                    class="form-control"
-                    placeholder="Ej: 01112345678"
-                    pattern="[0-9]{8,15}"
-                    title="Ingresá sólo números (entre 8 y 15 dígitos)"
-                    autocomplete="tel"
-                    required
-                  />
-                  <span
-                    class="error"
-                    id="telefono-error"
-                    role="alert"
-                    aria-live="polite"
-                    >Por favor ingresá tu número</span
-                  >
+                <div class="column">
+                  <div class="form-input">
+                    <label for="telefono" class="form-label"
+                      >Número de teléfono</label
+                    >
+                    <input
+                      id="telefono"
+                      name="telefono"
+                      type="tel"
+                      class="form-control"
+                      placeholder="Ej: 01112345678"
+                      pattern="[0-9]{8,15}"
+                      title="Ingresá sólo números (entre 8 y 15 dígitos)"
+                      autocomplete="tel"
+                    />
+                    <span
+                      class="error"
+                      id="telefono-error"
+                      role="alert"
+                      aria-live="polite"
+                      >Por favor ingresá tu número</span
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -135,7 +138,6 @@
                 name="password"
                 class="form-control"
                 placeholder="Ingresá una contraseña segura"
-                required
               />
               <span
                 class="error"
@@ -156,7 +158,6 @@
                 name="confirmar"
                 class="form-control"
                 placeholder="Repetí la contraseña"
-                required
               />
               <span
                 class="error"
@@ -173,7 +174,6 @@
                   type="checkbox"
                   id="terms"
                   name="terms"
-                  required
                   class="terms-checkbox"
                 />
                 <span>

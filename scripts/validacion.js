@@ -1,5 +1,6 @@
 'use strict';
 
+// Validación para el formulario de login (login.html)
 (function () {
   const form = document.getElementById('login-form');
   if (!form) return;
@@ -67,8 +68,7 @@
   });
 })();
 
-// Agrego funcionalidad para Recuperar Contraseña sin tocar la validación del login.
-// Se expone window.mostrarMensaje() para que Recuperar.html pueda llamarla desde onsubmit.
+// Validación para el formulario de recuperación de contraseña (recuperar.html)
 (function () {
   'use strict';
 
@@ -87,7 +87,7 @@
         errorEl.style.display = 'block';
       }
       if (emailEl) emailEl.classList.add('input-error');
-      return false; // conserva comportamiento de "no recargar"
+      return false; // no recarga
     }
 
     // limpiar error si existía
@@ -111,6 +111,143 @@
       window.mostrarMensaje();
     });
   }
+})();
+
+/* Validación para el formulario de registro (registro.html) */
+(function () {
+  'use strict';
+
+  const regForm = document.querySelector(
+    'form[action="registro_exitoso.html"]'
+  );
+  if (!regForm) return;
+
+  // helper para conseguir o crear un elemento de error junto al target
+  function getOrCreateErrorEl(id, referenceEl) {
+    let el = document.getElementById(id);
+    if (el) return el;
+    el = document.createElement('span');
+    el.id = id;
+    el.className = 'error';
+    el.setAttribute('role', 'alert');
+    el.setAttribute('aria-live', 'polite');
+    // insert after referenceEl
+    if (referenceEl && referenceEl.parentNode) {
+      referenceEl.parentNode.appendChild(el);
+    }
+    return el;
+  }
+
+  const fields = [
+    {
+      el: regForm.querySelector('#name'),
+      errEl: getOrCreateErrorEl('name-error', regForm.querySelector('#name')),
+      validate: (v) => (v || '').trim() !== '',
+      message: 'Por favor ingresá tu nombre',
+    },
+    {
+      el: regForm.querySelector('#email'),
+      errEl: getOrCreateErrorEl('email-error', regForm.querySelector('#email')),
+      validate: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((v || '').trim()),
+      message: 'Por favor ingresá un email válido',
+    },
+    {
+      el: regForm.querySelector('#apellido'),
+      errEl: getOrCreateErrorEl(
+        'apellido-error',
+        regForm.querySelector('#apellido')
+      ),
+      validate: (v) => (v || '').trim() !== '',
+      message: 'Por favor ingresá tu apellido',
+    },
+    {
+      el: regForm.querySelector('#telefono'),
+      errEl: getOrCreateErrorEl(
+        'telefono-error',
+        regForm.querySelector('#telefono')
+      ),
+      validate: (v) => /^[0-9]{8,15}$/.test((v || '').trim()),
+      message: 'Por favor ingresá un número válido (8-15 dígitos)',
+    },
+    {
+      el: regForm.querySelector('#password'),
+      errEl: getOrCreateErrorEl(
+        'password-error',
+        regForm.querySelector('#password')
+      ),
+      validate: (v) => (v || '').trim().length >= 6,
+      message: 'La contraseña debe tener al menos 6 caracteres',
+    },
+    {
+      el: regForm.querySelector('#confirmar'),
+      errEl: getOrCreateErrorEl(
+        'confirmar-error',
+        regForm.querySelector('#confirmar')
+      ),
+      validate: (v) => {
+        const pass = regForm.querySelector('#password');
+        return pass && (v || '') === (pass.value || '');
+      },
+      message: 'Las contraseñas no coinciden',
+    },
+    {
+      el: regForm.querySelector('#terms'),
+      errEl: getOrCreateErrorEl('terms-error', regForm.querySelector('#terms')),
+      validate: (v) => !!v,
+      message: 'Debes aceptar los términos',
+    },
+  ];
+
+  const showError = (field, msg) => {
+    if (!field.errEl) return;
+    field.errEl.textContent = msg;
+    field.errEl.style.display = 'block';
+    if (field.el && field.el.classList) field.el.classList.add('input-error');
+  };
+
+  const clearError = (field) => {
+    if (!field.errEl) return;
+    field.errEl.textContent = '';
+    field.errEl.style.display = 'none';
+    if (field.el && field.el.classList)
+      field.el.classList.remove('input-error');
+  };
+
+  fields.forEach((f) => {
+    if (!f.el) return;
+    const eventType = f.el.type === 'checkbox' ? 'change' : 'input';
+    f.el.addEventListener(eventType, () => clearError(f));
+    f.el.addEventListener('blur', () => {
+      const value = f.el.type === 'checkbox' ? f.el.checked : f.el.value || '';
+      if (value && value.toString().trim() !== '' && !f.validate(value)) {
+        showError(f, f.message);
+      }
+    });
+  });
+
+  regForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let firstInvalid = null;
+    fields.forEach((f) => clearError(f));
+
+    fields.forEach((f) => {
+      if (!f.el) return;
+      const value = f.el.type === 'checkbox' ? f.el.checked : f.el.value || '';
+      if (!f.validate(value)) {
+        showError(f, f.message);
+        if (!firstInvalid) firstInvalid = f.el;
+      }
+    });
+
+    if (firstInvalid) {
+      try {
+        firstInvalid.focus();
+      } catch (err) {}
+      return;
+    }
+
+    regForm.submit();
+  });
 })();
 
 /* Tooltip informativo para cualquier logo en .logo-container a img

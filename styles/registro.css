@@ -38,14 +38,17 @@ img.logo {
   gap: 1rem;
 }
 
-.two-columns {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+.fields {
   margin-top: 1rem;
 }
 
-.two-columns .column {
+.rows {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.rows .column {
   flex: 1;
   min-width: 220px;
 }
@@ -56,7 +59,6 @@ img.logo {
   margin: 0;
 }
 
-/* estilos movidos desde atributos inline en registro.html */
 .terms-label {
   display: flex;
   gap: 0.6rem;
