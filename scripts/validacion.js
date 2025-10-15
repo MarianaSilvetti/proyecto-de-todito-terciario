@@ -104,11 +104,97 @@
   };
 
   // Mejora progresiva: conectar el submit del formulario de recuperación si existe
-  const recoveryForm = document.getElementById('.recovery-form');
+  const recoveryForm = document.getElementById('recovery-form');
   if (recoveryForm) {
     recoveryForm.addEventListener('submit', (e) => {
       e.preventDefault();
       window.mostrarMensaje();
     });
   }
+})();
+
+/* Tooltip informativo para cualquier logo en .logo-container a img
+   Muestra "Clickea para volver al inicio" por unos segundos cuando se hace
+   hover o focus sobre la imagen del logo, y también al cargar la página. */
+(function () {
+  'use strict';
+
+  const LOGO_SELECTOR = '.logo-container a img';
+  const TOOLTIP_TEXT = 'Clickea para volver al inicio';
+  const TOOLTIP_DURATION = 3000;
+
+  function setupLogoTooltip(logoImg) {
+    if (!logoImg) return;
+    const parentLink = logoImg.closest('a');
+    if (!parentLink) return;
+
+    // envolver la img en un contenedor si no existe (necesario para posicionar el tooltip)
+    let wrapper = parentLink.querySelector('.logo-wrapper');
+    if (!wrapper || !wrapper.contains(logoImg)) {
+      wrapper = document.createElement('span');
+      wrapper.className = 'logo-wrapper';
+      parentLink.replaceChild(wrapper, logoImg);
+      wrapper.appendChild(logoImg);
+    }
+
+    // crear el elemento tooltip si no existe
+    let tooltip = wrapper.querySelector('.logo-tooltip');
+    if (!tooltip) {
+      tooltip = document.createElement('span');
+      tooltip.className = 'logo-tooltip';
+      tooltip.setAttribute('role', 'status');
+      tooltip.setAttribute('aria-hidden', 'true');
+      tooltip.innerText = TOOLTIP_TEXT;
+      wrapper.appendChild(tooltip);
+    }
+
+    let hideTimer = null;
+
+    const showTooltip = () => {
+      if (hideTimer) {
+        clearTimeout(hideTimer);
+        hideTimer = null;
+      }
+      tooltip.setAttribute('aria-hidden', 'false');
+      tooltip.classList.add('visible');
+      // ocultar luego de TOOLTIP_DURATION ms
+      hideTimer = setTimeout(() => {
+        tooltip.classList.remove('visible');
+        tooltip.setAttribute('aria-hidden', 'true');
+        hideTimer = null;
+      }, TOOLTIP_DURATION);
+    };
+
+    const hideTooltip = () => {
+      if (hideTimer) {
+        clearTimeout(hideTimer);
+        hideTimer = null;
+      }
+      tooltip.classList.remove('visible');
+      tooltip.setAttribute('aria-hidden', 'true');
+    };
+
+    // eventos: mostrar en hover/focus, ocultar en leave/blur o click
+    wrapper.addEventListener('mouseenter', showTooltip);
+    wrapper.addEventListener('focusin', showTooltip);
+    wrapper.addEventListener('mouseleave', hideTooltip);
+    wrapper.addEventListener('focusout', hideTooltip);
+    wrapper.addEventListener('click', () => {
+      showTooltip();
+    });
+
+    // accesibilidad: permitir que la imagen sea focusable si no lo es
+    if (!logoImg.hasAttribute('tabindex')) {
+      logoImg.setAttribute('tabindex', '0');
+    }
+
+    // Mostrar el tooltip automáticamente en cada carga de la página
+    window.addEventListener('load', () => {
+      showTooltip();
+    });
+  }
+
+  // Seleccionar todos los logos y aplicar el tooltip
+  const logos = document.querySelectorAll(LOGO_SELECTOR);
+  logos.forEach(setupLogoTooltip);
 })();

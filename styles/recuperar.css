@@ -1,3 +1,12 @@
+.recovery-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffff;
+  text-align: center;
+  letter-spacing: 3px;
+  margin: 3rem auto;
+}
+
 h2 {
   text-align: center; /* Asegura que el texto esté centrado */
   margin-top: 0; /* Elimina márgenes superiores adicionales en h2 */
@@ -24,4 +33,13 @@ input[type='submit']:hover {
 
 .form-buttons .btn-login {
   margin: 24px 0;
+}
+
+#confirmation-message {
+  display: none;
+  margin: 20px auto;
+}
+
+.account p {
+  margin: 1rem auto;
 }

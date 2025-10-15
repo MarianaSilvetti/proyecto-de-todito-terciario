@@ -18,14 +18,25 @@
             action="registro_exitoso.html"
             method="post"
           >
-            <!-- <div class="logo-container">
-              <img src="images/Formulario.jpg" alt="Registro" class="logo" />
-            </div> -->
-            <h1 class="register-title">Registrate</h1>
-            <span class="subtitle"
-              >Abrí tu cuenta y descubrí todo lo que tenemos para vos.</span
-            >
+            <div class="header-columns">
+              <div class="column">
+                <h1 class="register-title">Registrate</h1>
+                <span class="subtitle"
+                  >Abrí tu cuenta y descubrí todo lo que tenemos para vos.</span
+                >
+              </div>
+              <div class="logo-container">
+                <a href="index.html"
+                  ><img
+                    src="images/Logo-Web-De-Todito.png"
+                    alt="Registro"
+                    class="logo"
+                  />
+                </a>
+              </div>
+            </div>
 
+            <!-- TODO: Agregar el javascript en validacion.js para que se validen los campos con los labels rojos -->
             <!-- Dos columnas: Columna 1 = Nombre, Email. Columna 2 = Apellido, Teléfono -->
             <div class="two-columns">
               <div class="column">
@@ -203,5 +214,6 @@
         </div>
       </div>
     </div>
+    <script src="/scripts/validacion.js"></script>
   </body>
 </html>

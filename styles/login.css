@@ -40,6 +40,51 @@ body {
   display: inline-block;
 }
 
+/* Tooltip para el logo (texto flotante) */
+.logo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.logo-tooltip {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100% + 10px);
+  background: rgba(16, 42, 59, 0.95);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 6px 12px rgba(16, 42, 59, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+  transform-origin: bottom center;
+  z-index: 50;
+}
+
+.logo-tooltip.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* Flecha del tooltip */
+.logo-tooltip::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(16, 42, 59, 0.95);
+}
+
 .form-container {
   flex: 1;
   display: flex;
