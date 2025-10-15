@@ -1,29 +1,9 @@
-/* Fondo general */
-body {
-  font-family: 'Poppins', sans-serif;
-  color: #ffff;
-  background-color: #21415a;
-  background: linear-gradient(
-    180deg,
-    rgba(33, 65, 90, 1) 0%,
-    rgba(70, 139, 192, 1) 100%
-    );
-  display: flex;
-  justify-content: center;
-  padding: 20px; /* margen interno para evitar cortes */
-  box-sizing: border-box;
-  min-height: 100vh; /* altura mínima de pantalla */
-}
-
-/* Contenedor del formulario */
-form {
+.styled-form {
   background: #102a3b;
-  padding: 20px 30px;
-  border-radius: 8px;
+  padding: 2rem;
+  border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px; /* limita ancho máximo */
-  text-align: center;
+  width: 50%;
 }
 
 /* Imagen (logo) */
@@ -32,7 +12,14 @@ img.logo {
   height: 90px;
   object-fit: contain;
   display: block;
-  margin: 0 auto 20px auto;
+  margin: 0 auto;
+}
+
+.register-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffff;
+  margin-bottom: 15px;
 }
 
 .form-buttons {
@@ -41,23 +28,77 @@ img.logo {
   gap: 1rem;
 }
 
-h2 {
-  margin-bottom: 20px;
-  color: #ffff;
+.two-columns {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
-button, input[type="submit"] {
-  background-color: #0d6efd;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
+.column {
+  flex: 1;
+  min-width: 220px;
+}
+
+.form-label {
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  font-weight: 500;
+  margin: 0;
 }
 
-a {
-  color: #0d6efd;
+/* estilos movidos desde atributos inline en registro.html */
+.terms-label {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.terms-label span {
+  font-size: 0.95rem;
+  color: inherit;
+}
+
+.terms-checkbox {
+  width: 1rem;
+  height: 1rem;
+}
+
+.link--terms {
+  color: red;
   text-decoration: none;
+}
+
+.link--terms:hover {
+  text-decoration: underline;
+  filter: brightness(1.06);
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #ffffffb2;
+  margin-bottom: 20px;
+}
+
+.account {
+  margin: 2rem 0;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.divider-line {
+  flex: 1;
+  border: none;
+  border-top: 1px solid #ffffffb2;
+  margin: 0 1rem;
+  height: 0;
+  background: transparent;
+}
+
+.divider-text {
+  white-space: nowrap;
+  color: #ffffffb2;
+  font-size: 0.95rem;
 }

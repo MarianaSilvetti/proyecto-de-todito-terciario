@@ -40,19 +40,6 @@ body {
   display: inline-block;
 }
 
-/* Fondo de la izquierda */
-/* .right-background {
-  background-image: url('/images/login01.png');
-  flex: 1;
-  background-color: #ffff;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 50%;
-  height: 100vh;
-} */
-
-/* Contenedor del formulario */
 .form-container {
   flex: 1;
   display: flex;
@@ -62,7 +49,7 @@ body {
   border-radius: 30px;
 }
 
-.login-form {
+.styled-form {
   width: 30%;
   max-width: 70%;
   padding: 2rem;
@@ -105,10 +92,6 @@ body {
   margin-bottom: 5rem;
 }
 
-.form-input {
-  margin-bottom: 1.5rem;
-}
-
 .form-label {
   display: block;
   margin-bottom: 0.5rem;
@@ -126,7 +109,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 12px;
   box-sizing: border-box;
-  background: #fff;
+  background: #effafc;
   box-shadow: 0px 8px 10px #194869;
 }
 
@@ -260,6 +243,7 @@ body {
 .form-buttons .btn-google:hover img {
   transform: scale(1.5);
 }
+
 .form-buttons .btn-google img {
   max-height: 100%;
   height: 2em;
@@ -272,20 +256,20 @@ body {
   color: #000000;
 }
 
-.register {
+.account {
   text-align: center;
   font-size: 0.9rem;
   font-weight: 600;
   color: #6ca0ff;
 }
 
-.register .register-link {
+.account .account-link {
   color: #fff;
   text-decoration: none;
   font-weight: 700;
 }
 
-.register .register-link:hover {
+.account .account-link:hover {
   color: #6ca0ff;
 }
 
@@ -295,11 +279,14 @@ body {
   margin-top: 6px;
   display: none; /* se muestra desde JS cuando hay error */
 }
+
 .input-error {
   border-color: #c62828 !important;
   box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.08);
 }
+
 .form-input {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1.5rem;
 }

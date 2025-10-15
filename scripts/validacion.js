@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-  const form = document.querySelector('.login-form');
+  const form = document.getElementById('login-form');
   if (!form) return;
 
   const fields = [
@@ -65,4 +65,50 @@
 
     form.submit();
   });
+})();
+
+// Agrego funcionalidad para Recuperar Contraseña sin tocar la validación del login.
+// Se expone window.mostrarMensaje() para que Recuperar.html pueda llamarla desde onsubmit.
+(function () {
+  'use strict';
+
+  window.mostrarMensaje = function () {
+    const emailEl = document.getElementById('email');
+    const errorEl = document.getElementById('email-error');
+    const confirmation = document.getElementById('confirmation-message');
+    const userEmail = document.getElementById('user-email');
+    const emailValue = emailEl ? (emailEl.value || '').trim() : '';
+
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
+
+    if (!emailValue || !isValidEmail) {
+      if (errorEl) {
+        errorEl.textContent = 'Por favor ingresá un email válido';
+        errorEl.style.display = 'block';
+      }
+      if (emailEl) emailEl.classList.add('input-error');
+      return false; // conserva comportamiento de "no recargar"
+    }
+
+    // limpiar error si existía
+    if (errorEl) {
+      errorEl.style.display = 'none';
+      errorEl.textContent = '';
+    }
+    if (emailEl) emailEl.classList.remove('input-error');
+
+    if (userEmail) userEmail.innerText = emailValue;
+    if (confirmation) confirmation.style.display = 'block';
+
+    return false;
+  };
+
+  // Mejora progresiva: conectar el submit del formulario de recuperación si existe
+  const recoveryForm = document.getElementById('.recovery-form');
+  if (recoveryForm) {
+    recoveryForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      window.mostrarMensaje();
+    });
+  }
 })();

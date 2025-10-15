@@ -1,0 +1,27 @@
+h2 {
+  text-align: center; /* Asegura que el texto esté centrado */
+  margin-top: 0; /* Elimina márgenes superiores adicionales en h2 */
+}
+
+input[type='email'],
+input[type='submit'] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+input[type='submit'] {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+input[type='submit']:hover {
+  background-color: #0d6efd;
+}
+
+.form-buttons .btn-login {
+  margin: 24px 0;
+}

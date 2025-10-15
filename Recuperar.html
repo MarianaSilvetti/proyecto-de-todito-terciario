@@ -5,41 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="images/DeTodito-logo-sin.png" />
     <title>Recuperar Contraseña</title>
-    <link rel="stylesheet" href="estilos.css" />
+    <link rel="stylesheet" href="styles/login.css" />
+    <link rel="stylesheet" href="styles/recuperar.css" />
   </head>
   <body>
-    <div class="container">
-      <h2><img src="images (1).jpeg" alt="logo" />Recuperar Contraseña</h2>
+    <div class="full-container">
+      <div class="login-container">
+        <div class="form-container">
+          <form
+            class="styled-form"
+            id="recovery-form"
+            action=""
+            onsubmit="mostrarMensaje(); return false;"
+            novalidate
+          >
+            <div class="logo-container">
+              <img src="images/recuperar.png" alt="logo" loading="lazy" />
+            </div>
+            <h1 class="login-title">Recuperar Contraseña</h1>
+            <div class="form-input">
+              <label for="email" class="form-label">Email</label>
+              <input
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="Ingresa tu email"
+                type="email"
+                autocomplete="email"
+              />
+              <span
+                class="error"
+                id="email-error"
+                role="alert"
+                aria-live="polite"
+                >Por favor ingresá tu email</span
+              >
+            </div>
+            <div class="form-buttons">
+              <button type="submit" class="btn btn-login">Enviar</button>
+            </div>
+            <!-- Mensaje de confirmación que se mostrará después de enviar -->
+            <div
+              id="confirmation-message"
+              style="display: none; margin-top: 20px"
+            >
+              <p>
+                Se ha enviado un mensaje de verificación al siguiente correo:
+                <b><span id="user-email"></span></b>
+              </p>
+            </div>
 
-      <form
-        id="password-form"
-        action="#"
-        method="POST"
-        onsubmit="mostrarMensaje(); return false;"
-      >
-        <label for="email">Introduce tu correo electrónico institucional:</label
-        ><br />
-        <input type="email" id="email" name="email" required /><br /><br />
-
-        <input type="submit" value="Enviar" />
-      </form>
-
-      <!-- Mensaje de confirmación que se mostrará después de enviar -->
-      <div id="confirmation-message" style="display: none; margin-top: 20px">
-        <p>
-          Se ha enviado un mensaje de verificación al siguiente correo:
-          <span id="user-email"></span>.
-        </p>
+            <div class="account">
+              <p>
+                Ya podés ingresar a tu cuenta?
+                <a class="account-link" href="login.html">Volver a iniciar sesión</a>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
 
-    <script>
-      function mostrarMensaje() {
-        var email = document.getElementById('email').value;
-        document.getElementById('user-email').innerText = email;
-        document.getElementById('confirmation-message').style.display = 'block';
-        document.getElementById('password-form').style.display = 'none';
-      }
-    </script>
+    <script src="/scripts/validacion.js"></script>
   </body>
 </html>

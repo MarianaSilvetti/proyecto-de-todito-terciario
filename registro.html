@@ -1,47 +1,207 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/login.css" />
+    <link rel="stylesheet" href="./styles/registro.css" />
+    <link rel="shortcut icon" href="images/DeTodito-logo-sin.png" />
+
     <title>Registro</title>
-    <link rel="stylesheet" href="./styles/registro.css">
-</head>
-<body>
+  </head>
+  <body>
+    <div class="full-container">
+      <div class="login-container">
+        <div class="form-container">
+          <form
+            class="styled-form"
+            action="registro_exitoso.html"
+            method="post"
+          >
+            <!-- <div class="logo-container">
+              <img src="images/Formulario.jpg" alt="Registro" class="logo" />
+            </div> -->
+            <h1 class="register-title">Registrate</h1>
+            <span class="subtitle"
+              >Abrí tu cuenta y descubrí todo lo que tenemos para vos.</span
+            >
 
-  <form action="registro_exitoso.html" method="post">
-    <img src="images/Formulario.jpg" alt="Registro" class="logo">
+            <!-- Dos columnas: Columna 1 = Nombre, Email. Columna 2 = Apellido, Teléfono -->
+            <div class="two-columns">
+              <div class="column">
+                <div class="form-input">
+                  <label for="name" class="form-label">Nombre</label>
+                  <input
+                    id="name"
+                    name="name"
+                    class="form-control"
+                    placeholder="Ingresa tu nombre"
+                    autocomplete="name"
+                    required
+                  />
+                  <span
+                    class="error"
+                    id="name-error"
+                    role="alert"
+                    aria-live="polite"
+                    >Por favor ingresá tu nombre</span
+                  >
+                </div>
 
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre" required><br><br>
+                <div class="form-input">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    class="form-control"
+                    placeholder="tu@ejemplo.com"
+                    autocomplete="email"
+                    required
+                  />
+                  <span
+                    class="error"
+                    id="email-error"
+                    role="alert"
+                    aria-live="polite"
+                    >Por favor ingresá tu email</span
+                  >
+                </div>
+              </div>
 
-    <label for="apellido">Apellido:</label><br>
-    <input type="text" id="apellido" name="apellido" required><br><br>
+              <div class="column">
+                <div class="form-input">
+                  <label for="apellido" class="form-label">Apellido</label>
+                  <input
+                    id="apellido"
+                    name="apellido"
+                    class="form-control"
+                    placeholder="Ingresa tu apellido"
+                    autocomplete="family-name"
+                    required
+                  />
+                  <span
+                    class="error"
+                    id="apellido-error"
+                    role="alert"
+                    aria-live="polite"
+                    >Por favor ingresá tu apellido</span
+                  >
+                </div>
 
-    <label for="dni">Nº de Documento:</label><br>
-    <input type="text" id="dni" name="dni" pattern="\d{8}" title="El documento debe tener exactamente 8 dígitos" required><br><br>
+                <div class="form-input">
+                  <label for="telefono" class="form-label"
+                    >Número de teléfono</label
+                  >
+                  <input
+                    id="telefono"
+                    name="telefono"
+                    type="tel"
+                    class="form-control"
+                    placeholder="Ej: 01112345678"
+                    pattern="[0-9]{8,15}"
+                    title="Ingresá sólo números (entre 8 y 15 dígitos)"
+                    autocomplete="tel"
+                    required
+                  />
+                  <span
+                    class="error"
+                    id="telefono-error"
+                    role="alert"
+                    aria-live="polite"
+                    >Por favor ingresá tu número</span
+                  >
+                </div>
+              </div>
+            </div>
 
+            <!-- Campos de contraseña ocupando todo el ancho -->
+            <div class="form-input">
+              <label for="password" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                placeholder="Ingresá una contraseña segura"
+                required
+              />
+              <span
+                class="error"
+                id="password-error"
+                role="alert"
+                aria-live="polite"
+                >Por favor ingresá la contraseña</span
+              >
+            </div>
 
-    <label for="email">Correo electrónico:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+            <div class="form-input">
+              <label for="confirmar" class="form-label"
+                >Confirmá tu contraseña</label
+              >
+              <input
+                type="password"
+                id="confirmar"
+                name="confirmar"
+                class="form-control"
+                placeholder="Repetí la contraseña"
+                required
+              />
+              <span
+                class="error"
+                id="confirmar-error"
+                role="alert"
+                aria-live="polite"
+                >Las contraseñas no coinciden</span
+              >
+            </div>
 
-    <label for="fecha_nacimiento">Fecha de nacimiento:</label><br>
-    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
+            <div class="form-input">
+              <label for="terms" class="terms-label">
+                <input
+                  type="checkbox"
+                  id="terms"
+                  name="terms"
+                  required
+                  class="terms-checkbox"
+                />
+                <span>
+                  He leído y acepto los
+                  <a href="terminos.html" class="link--terms">Términos</a>
+                  y la
+                  <a href="privacidad.html" class="link--terms"
+                    >Política de Privacidad</a
+                  >.
+                </span>
+              </label>
+            </div>
 
+            <div class="form-buttons">
+              <button type="submit" class="btn btn-login">Crear cuenta</button>
+            </div>
 
-    <label for="usuario">Nombre de usuario:</label><br>
-    <input type="text" id="usuario" name="usuario" required><br><br>
+            <div class="account">
+              <p>
+                ¿Ya sos parte?
+                <a class="account-link" href="login.html">Accedé.</a>
+              </p>
+            </div>
 
-    <label for="password">Contraseña:</label><br>
-    <input type="password" id="password" name="password" required><br><br>
+            <div class="divider">
+              <hr class="divider-line" />
+              <span class="divider-text">O crea tu cuenta con</span>
+              <hr class="divider-line" />
+            </div>
 
-    <label for="confirmar">Confirmar contraseña:</label><br>
-    <input type="password" id="confirmar" name="confirmar" required><br><br>
-
-    <button type="submit">Registrarse</button><br><br>
-
-    <a href="login.html">¿Ya tenés cuenta? Iniciá sesión</a><br>
-    <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
-  </form>
-
-</body>
+            <div class="form-buttons">
+              <button type="button" class="btn btn-google">
+                <img src="/images/google.png" alt="Google" />
+                Iniciar con Google
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
