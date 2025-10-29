@@ -662,3 +662,69 @@ main.favoritos {
     height: 8px;
   }
 }
+
+/* Modal genérico (Próximamente) */
+.modal-overlay.proximamente-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 2000;
+}
+
+.modal-overlay.proximamente-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal.proximamente-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.98);
+  background: var(--c1);
+  color: var(--c7);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  width: min(560px, 92vw);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 2001;
+}
+
+.modal.proximamente-modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.proximamente-modal .modal-content {
+  padding: 24px 24px 18px 24px;
+}
+
+.proximamente-modal .modal-content p {
+  margin: 0 0 16px 0;
+  font-size: 1rem;
+  color: var(--c7);
+}
+
+.proximamente-modal .modal-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.proximamente-modal .modal-close {
+  background: var(--c3);
+  color: #fff;
+  border: none;
+  border-radius: 1000px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.proximamente-modal .modal-close:hover {
+  background: var(--c4);
+}
