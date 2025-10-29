@@ -67,9 +67,7 @@
     const btnBuy = document.createElement('button');
     btnBuy.className = 'action buy';
     btnBuy.textContent = 'Comprar';
-    btnBuy.addEventListener('click', () => {
-      alert('Redirigiendo a la compra...');
-    });
+    btnBuy.dataset.proximamente = 'true'; // Será detectado por proximamente.js
 
     const btnRemove = document.createElement('button');
     btnRemove.className = 'action remove';

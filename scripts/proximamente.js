@@ -120,6 +120,29 @@
         });
       }
     });
+
+    // Botones de "Comprar" en favoritos (marcados con data-proximamente)
+    document.querySelectorAll('button[data-proximamente="true"]').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        open();
+      });
+    });
+
+    // Links del footer (excluyendo redes sociales y Freepik)
+    document.querySelectorAll('footer a').forEach((a) => {
+      // Excluir si tiene ícono de redes sociales o es el link de Freepik
+      const hasSocialIcon = a.querySelector('i.fa-brands');
+      const isFreepik = a.href && a.href.includes('freepik');
+      
+      if (!hasSocialIcon && !isFreepik && a.href === '#' || a.getAttribute('href') === '#') {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          open();
+        });
+      }
+    });
   }
 
   function init() {
