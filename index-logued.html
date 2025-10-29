@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>De Todito - Polirubro</title>
+    <link rel="shortcut icon" href="images/DeTodito-logo-sin.png" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/categorias.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="/images/Logo-Web-De-Todito.png"
+            alt="Logo de De Todito Polirubro"
+          />
+        </a>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Encontrá lo que necesitás" />
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="user-actions">
+        <a href="login.html" class="btn login-icon"
+          ><i class="fa-solid fa-right-to-bracket"></i
+        ></a>
+        <!-- Botón de usuario logueado -->
+        <a href="#" class="btn user-menu">
+          <span class="avatar" aria-hidden="true">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <span class="username">Usuario</span>
+          <i class="fa-solid fa-chevron-down chevron" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="btn login-text">Mis compras</a>
+        <a href="carrito.html" class="btn"
+          ><i class="fa-solid fa-bag-shopping"></i
+        ></a>
+      </div>
+    </header>
+
+    <!-- NAV -->
+    <nav>
+      <button>Categorías <i class="fa-solid fa-chevron-down"></i></button>
+      <button>Oferta</button>
+      <button>Vender</button>
+      <a href="favoritos.html"><button>Favoritos</button></a>
+      <button>Ayuda</button>
+    </nav>
+
+    <!-- Menú flotante de categorías -->
+    <div class="categories-menu" id="categories-menu">
+      <div class="categories-list">
+        <div class="category-item" data-category="blanqueria">
+          <span>BLANQUERÍA</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="category-item" data-category="electronica">
+          <span>ELECTRÓNICA</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="category-item" data-category="marroquineria">
+          <span>MARROQUINERÍA</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="category-item" data-category="camperas">
+          <span>CAMPERAS</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+      <div class="subcategories-grid" id="subcategories-grid">
+        <!-- Las subcategorías se cargarán dinámicamente -->
+      </div>
+    </div>
+
+    <!-- Overlay para sombrear el fondo -->
+    <div class="categories-overlay" id="categories-overlay"></div>
+
+    <!-- carrusel -->
+    <div class="carrusel" aria-label="Carrusel de imágenes">
+      <button class="nav-btn left" aria-label="Anterior">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="nav-btn right" aria-label="Siguiente">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <div class="imagenes">
+        <video
+          src="/images/BANNER1.mp4"
+          alt="Banner 1"
+          autoplay
+          muted
+          loop
+        ></video>
+        <video
+          src="/images/BANNER2.mp4"
+          alt="Banner 2"
+          autoplay
+          muted
+          loop
+        ></video>
+        <video
+          src="/images/BANNER3.mp4"
+          alt="Banner 3"
+          autoplay
+          muted
+          loop
+        ></video>
+        <img src="/images/BANNER2.png" alt="Banner 4" />
+        <img src="/images/BANNER3.png" alt="Banner 5" />
+      </div>
+
+      <div class="dots" role="tablist" aria-label="Indicadores del carrusel">
+        <button
+          class="dot active"
+          data-index="0"
+          aria-label="Ir a la imagen 1"
+        ></button>
+        <button
+          class="dot"
+          data-index="1"
+          aria-label="Ir a la imagen 2"
+        ></button>
+        <button
+          class="dot"
+          data-index="2"
+          aria-label="Ir a la imagen 3"
+        ></button>
+        <button
+          class="dot"
+          data-index="3"
+          aria-label="Ir a la imagen 4"
+        ></button>
+        <button
+          class="dot"
+          data-index="4"
+          aria-label="Ir a la imagen 5"
+        ></button>
+      </div>
+    </div>
+
+    <!-- PRODUCTOS (se cargan dinámicamente por scripts/productos.js) -->
+    <main class="productos"></main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-section">
+        <div class="footer-section-item">
+          <i class="fa-solid fa-truck"></i>
+          <div class="footer-section-text">
+            <p>Envíos a todo el país</p>
+            <span>Envíos por Andreani y Correo Argentino</span>
+          </div>
+        </div>
+        <div class="footer-section-item">
+          <i class="fa-solid fa-credit-card"></i>
+          <div class="footer-section-text">
+            <p>Todos los medios de pago</p>
+            <span>Aceptamos todos los medios de pagos</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-links-columns">
+          <div>
+            <a href="#">Preguntas frecuentes</a>
+            <a href="#">Métodos de pago</a>
+            <a href="#">Contacto</a>
+          </div>
+          <div>
+            <a href="#">Botón de arrepentimiento</a>
+            <a href="#">Cambios y devoluciones</a>
+          </div>
+        </div>
+        <div class="footer-social">
+          <p>¡Seguinos en nuestras redes!</p>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-legal">
+        Imágenes diseñadas por<a href="http://www.freepik.es/">Freepik</a>
+      </div>
+    </footer>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/38dd05b7b5.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="/scripts/carrusel.js"></script>
+  <script src="/scripts/listas.js"></script>
+  <script src="/scripts/categorias.js"></script>
+  <script src="/scripts/productos.js"></script>
+</html>

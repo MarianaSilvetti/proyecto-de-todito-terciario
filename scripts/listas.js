@@ -4,7 +4,7 @@
 // Por ahora todas tienen las mismas subcategorías de blanquería
 const subcategoriasData = {
   blanqueria: [
-    { name: 'VER TODO', link: '/categorias/blanqueria.html', isVerTodo: true },
+    { name: 'Ver todo', link: '/categorias/blanqueria.html', isVerTodo: true },
     { name: 'Sábanas', link: '/categorias/blanqueria.html#sabanas', image: '/images/sabanas.jpg' },
     { name: 'Toallas', link: '/categorias/blanqueria.html#toallas', image: '/images/toalla.jpg' },
     { name: 'Toallones', link: '/categorias/blanqueria.html#toallones', image: '/images/toallones.jpg' },
@@ -12,7 +12,7 @@ const subcategoriasData = {
     { name: 'Acolchados', link: '/categorias/blanqueria.html#acolchados', image: '/images/acolchado.jpg' }
   ],
   electronica: [
-    { name: 'VER TODO', link: '/categorias/electronica.html', isVerTodo: true },
+    { name: 'Ver todo', link: '/categorias/electronica.html', isVerTodo: true },
     { name: 'Sábanas', link: '/categorias/blanqueria.html#sabanas', image: '/images/sabanas.jpg' },
     { name: 'Toallas', link: '/categorias/blanqueria.html#toallas', image: '/images/toalla.jpg' },
     { name: 'Toallones', link: '/categorias/blanqueria.html#toallones', image: '/images/toallon.jpg' },
@@ -20,7 +20,7 @@ const subcategoriasData = {
     { name: 'Acolchados', link: '/categorias/blanqueria.html#acolchados', image: '/images/acolchado.jpg' }
   ],
   marroquineria: [
-    { name: 'VER TODO', link: '/categorias/marroquineria.html', isVerTodo: true },
+    { name: 'Ver todo', link: '/categorias/marroquineria.html', isVerTodo: true },
     { name: 'Sábanas', link: '/categorias/blanqueria.html#sabanas', image: '/images/sabanas.jpg' },
     { name: 'Toallas', link: '/categorias/blanqueria.html#toallas', image: '/images/toalla.jpg' },
     { name: 'Toallones', link: '/categorias/blanqueria.html#toallones', image: '/images/toallon.jpg' },
@@ -28,7 +28,7 @@ const subcategoriasData = {
     { name: 'Acolchados', link: '/categorias/blanqueria.html#acolchados', image: '/images/acolchado.jpg' }
   ],
   camperas: [
-    { name: 'VER TODO', link: '/categorias/camperas.html', isVerTodo: true },
+    { name: 'Ver todo', link: '/categorias/camperas.html', isVerTodo: true },
     { name: 'Sábanas', link: '/categorias/blanqueria.html#sabanas', image: '/images/sabanas.jpg' },
     { name: 'Toallas', link: '/categorias/blanqueria.html#toallas', image: '/images/toalla.jpg' },
     { name: 'Toallones', link: '/categorias/blanqueria.html#toallones', image: '/images/toallon.jpg' },
@@ -97,4 +97,12 @@ const productosData = [
     image: { src: '/images/acolchado.jpg', alt: 'Acolchado' },
     category: 'blanqueria',
   },
+];
+
+// Favoritos (referencias por id de producto)
+const favoritosData = [
+  'bolso-matero-unicross',
+  'billetera',
+  'acolchado-doble-faz',
+  'bufanda'
 ];
