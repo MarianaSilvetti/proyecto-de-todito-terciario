@@ -728,3 +728,72 @@ main.favoritos {
 .proximamente-modal .modal-close:hover {
   background: var(--c4);
 }
+
+/* Modal de carrito (éxito) */
+.modal-overlay.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 2000;
+}
+
+.modal-overlay.cart-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal.cart-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.98);
+  background: var(--c1);
+  color: var(--c7);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  width: min(560px, 92vw);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 2001;
+}
+
+.modal.cart-modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.cart-modal .modal-content {
+  padding: 24px 24px 18px 24px;
+  text-align: center;
+}
+
+.cart-modal-icon {
+  display: inline-flex;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  margin: 6px auto 12px;
+  background: #e6f6fc;
+  color: var(--c3);
+  box-shadow: inset 0 0 0 2px rgba(30, 167, 225, 0.25);
+}
+
+.cart-modal-icon i {
+  font-size: 2.2rem;
+}
+
+.cart-modal-title {
+  margin: 6px 0 8px 0;
+}
+
+.cart-modal-message {
+  margin: 0 0 16px 0;
+  color: var(--c7);
+}

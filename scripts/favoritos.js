@@ -57,7 +57,11 @@
     btnCart.className = 'action add-cart';
     btnCart.textContent = 'Agregar al carrito';
     btnCart.addEventListener('click', () => {
-      alert('Producto agregado al carrito');
+      if (window.CartModal && typeof window.CartModal.open === 'function') {
+        window.CartModal.open();
+      } else {
+        alert('Producto agregado al carrito');
+      }
     });
 
     const btnBuy = document.createElement('button');
