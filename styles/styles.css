@@ -106,12 +106,13 @@ header {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 14px;
+  padding: 0;
+  padding-right: 14px;
 }
 
 .user-actions .user-menu .avatar {
-  width: 28px;
-  height: 28px;
+  width: 41px;
+  height: 41px;
   border-radius: 50%;
   background: var(--c1);
   display: inline-flex;
@@ -126,6 +127,12 @@ header {
   object-fit: cover;
   border-radius: 50%;
   display: block;
+  transition: filter 0.3s ease;
+  filter: brightness(1.2);
+}
+
+.user-actions .user-menu:hover .avatar img {
+  filter: brightness(0.9);
 }
 
 .user-actions .user-menu .username {

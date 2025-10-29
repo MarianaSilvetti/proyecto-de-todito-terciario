@@ -143,6 +143,14 @@
         });
       }
     });
+
+    // Botón de usuario (user-menu)
+    document.querySelectorAll('.user-menu').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        open();
+      });
+    });
   }
 
   function init() {
