@@ -6,6 +6,7 @@
     <title>De Todito - Polirubro</title>
     <link rel="shortcut icon" href="images/DeTodito-logo-sin.png" />
     <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/categorias.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -43,13 +44,41 @@
 
     <!-- NAV -->
     <nav>
-      <button class="category">
+      <button class="category" id="category-btn">
         Categorías <i class="fa-solid fa-chevron-down"></i>
       </button>
       <button>Oferta</button>
       <button>Vender</button>
       <button>Ayuda</button>
     </nav>
+
+    <!-- Menú flotante de categorías -->
+    <div class="categories-menu" id="categories-menu">
+      <div class="categories-list">
+        <div class="category-item" data-category="blanqueria">
+          <span>BLANQUERÍA</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="category-item" data-category="electronica">
+          <span>ELECTRÓNICA</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="category-item" data-category="marroquineria">
+          <span>MARROQUINERÍA</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="category-item" data-category="camperas">
+          <span>CAMPERAS</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+      <div class="subcategories-grid" id="subcategories-grid">
+        <!-- Las subcategorías se cargarán dinámicamente -->
+      </div>
+    </div>
+
+    <!-- Overlay para sombrear el fondo -->
+    <div class="categories-overlay" id="categories-overlay"></div>
 
     <!-- carrusel -->
     <div class="carrusel" aria-label="Carrusel de imágenes">
@@ -115,147 +144,8 @@
       </div>
     </div>
 
-    <!-- PRODUCTOS -->
-    <main class="productos">
-      <div class="card">
-        <div class="card-image">
-          <img
-            src="/images/bolso-matero-unicross.jpg"
-            alt="Bolso Matero marca Unicross"
-          />
-        </div>
-        <div class="card-content">
-          <div class="product-info">
-            <h2>Bolso Matero Unicross</h2>
-            <p>$17.600</p>
-            <h3>3 cuotas sin interés de $21.100,00</h3>
-          </div>
-          <div class="product-actions">
-            <button><i class="fa-solid fa-bag-shopping"></i></button>
-            <button><i class="fa-solid fa-heart"></i></button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image">
-          <img src="/images/bufanda.jpg"  alt="Bufanda marca" />
-        </div>
-        <div class="card-content">
-          <div class="product-info">
-            <h2>Bufanda</h2>
-            <p>$63.300</p>
-            <h3>3 cuotas sin interés de $21.100,00</h3>
-          </div>
-          <div class="product-actions">
-            <button><i class="fa-solid fa-bag-shopping"></i></button>
-            <button><i class="fa-solid fa-heart"></i></button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image">
-          <img src="/images/paraguas.jpg" alt="Paraguas Trendy" />
-        </div>
-        <div class="card-content">
-          <div class="product-info">
-            <h2>Paraguas Trendy</h2>
-            <p>$63.300</p>
-            <h3>3 cuotas sin interés de $21.100,00</h3>
-          </div>
-          <div class="product-actions">
-            <button><i class="fa-solid fa-bag-shopping"></i></button>
-            <button><i class="fa-solid fa-heart"></i></button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image">
-          <img src="/images/billetera.jpg" alt="Billetera" />
-        </div>
-        <div class="card-content">
-          <div class="product-info">
-            <h2 data-full="Acolchado Doble Faz Love & Home color azúl">
-              Billetera
-            </h2>
-            <p>$63.300</p>
-            <h3>3 cuotas sin interés de $21.100,00</h3>
-          </div>
-          <div class="product-actions">
-            <button><i class="fa-solid fa-bag-shopping"></i></button>
-            <button><i class="fa-solid fa-heart"></i></button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image">
-          <img src="/images/toalla.jpg" alt="Toallas" />
-        </div>
-        <div class="card-content">
-          <div class="product-info">
-            <h2>Toalla</h2>
-            <p>$63.300</p>
-            <h3>3 cuotas sin interés de $21.100,00</h3>
-          </div>
-          <div class="product-actions">
-            <button><i class="fa-solid fa-bag-shopping"></i></button>
-            <button><i class="fa-solid fa-heart"></i></button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image">
-          <img src="/images/manton.jpg" alt="Manton" />
-        </div>
-        <div class="card-content">
-          <div class="product-info">
-            <h2>Manton</h2>
-            <p>$63.300</p>
-            <h3>3 cuotas sin interés de $21.100,00</h3>
-          </div>
-          <div class="product-actions">
-            <button><i class="fa-solid fa-bag-shopping"></i></button>
-            <button><i class="fa-solid fa-heart"></i></button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image">
-          <img
-            src="/images/manta-plush-acanalada.jpg"
-            alt="Manta Plush Acanalada"
-          />
-        </div>
-        <div class="card-content">
-          <div class="product-info">
-            <h2>Manta Plush Acanalada</h2>
-            <p>$63.300</p>
-            <h3>3 cuotas sin interés de $21.100,00</h3>
-          </div>
-          <div class="product-actions">
-            <button><i class="fa-solid fa-bag-shopping"></i></button>
-            <button><i class="fa-solid fa-heart"></i></button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image">
-          <img src="/images/acolchado.jpg" alt="Acolchado" />
-        </div>
-        <div class="card-content">
-          <div class="product-info">
-            <h2>Acolchado Doble Faz Love & Home</h2>
-            <p>$63.300</p>
-            <h3>3 cuotas sin interés de $21.100,00</h3>
-          </div>
-          <div class="product-actions">
-            <button><i class="fa-solid fa-bag-shopping"></i></button>
-            <button><i class="fa-solid fa-heart"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Más productos aquí -->
-    </main>
+    <!-- PRODUCTOS (se cargan dinámicamente por scripts/productos.js) -->
+    <main class="productos"></main>
 
     <!-- FOOTER -->
     <footer>
@@ -305,4 +195,7 @@
     crossorigin="anonymous"
   ></script>
   <script src="/scripts/carrusel.js"></script>
+  <script src="/scripts/listas.js"></script>
+  <script src="/scripts/categorias.js"></script>
+  <script src="/scripts/productos.js"></script>
 </html>

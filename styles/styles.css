@@ -23,6 +23,8 @@ header {
   align-items: center;
   background: var(--c7);
   padding: 15px 30px;
+  position: relative;
+  z-index: 1000;
 }
 /* BOTONES */
 .btn {
@@ -106,6 +108,7 @@ nav {
   background: var(--c7);
   padding: 12px;
   gap: 140px;
+  z-index: 1000;
 }
 
 nav button {
