@@ -138,7 +138,7 @@
 
 /* Círculo especial para "VER TODO" */
 .subcategory-circle.ver-todo {
-  background-image: url('/images/menu2.png');
+  background-image: url('images/menu2.png');
   background-size: cover;
   border-color: #10517b;
   color: #ffffff;
