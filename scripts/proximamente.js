@@ -147,9 +147,13 @@
       }
     });
 
-    // Botón de usuario (user-menu) - solo en páginas no logueadas
+    // Botón de usuario (user-menu) - solo en páginas NO logueadas
     const path = (window.location.pathname || '').toLowerCase();
-    const isLogged = path.endsWith('/index-logued.html') || path.endsWith('index-logued.html');
+    const isLogged =
+      path.endsWith('/index-logued.html') ||
+      path.endsWith('index-logued.html') ||
+      path.endsWith('/favoritos.html') ||
+      path.endsWith('favoritos.html');
     if (!isLogged) {
       document.querySelectorAll('.user-menu').forEach((btn) => {
         btn.addEventListener('click', (e) => {
