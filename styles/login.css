@@ -91,6 +91,12 @@ html {
   color: #6ca0ff;
 }
 
+.full-container .forgot-password-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
 /* Responsive: Tablet */
 @media screen and (max-width: 1300px) {
   .full-container .styled-form {
@@ -120,9 +126,9 @@ html {
   }
 
   .full-container .login-actions {
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 12px;
-    align-items: flex-start;
+    align-items: center;
     margin: 0 0 1.2rem 0;
   }
 
@@ -148,5 +154,10 @@ html {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     letter-spacing: 1px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .full-container .styled-form {
+    padding: 1.2rem;
   }
 }
