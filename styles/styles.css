@@ -674,6 +674,7 @@ main.favoritos {
   padding: 10px 16px;
   cursor: pointer;
   font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .modal .btn-primary {
@@ -763,13 +764,22 @@ main.favoritos {
 }
 
 .login-required-modal .btn-secondary {
-  background: #0f273a;
+  background: var(--c2);
+  color: var(--c7);
+}
+
+.login-required-modal .btn-secondary:hover {
+  background: var(--c5);
   color: var(--c2);
 }
 
 .login-required-modal .btn-link {
   background: transparent;
   color: var(--c3);
+}
+
+.login-required-modal .btn-link:hover {
+  color: var(--c4);
 }
 
 /* Modal de carrito (éxito) */
@@ -834,11 +844,14 @@ main.favoritos {
 
 .cart-modal-title {
   margin: 6px 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .cart-modal-message {
   margin: 0 0 16px 0;
   color: var(--c7);
+  font-size: 1rem;
 }
 
 /* Modal de favoritos (éxito) */
@@ -903,11 +916,14 @@ main.favoritos {
 
 .favorite-modal-title {
   margin: 6px 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .favorite-modal-message {
   margin: 0 0 16px 0;
   color: var(--c7);
+  font-size: 1rem;
 }
 
 /* Barra inferior fija (versión mobile) */
@@ -943,6 +959,56 @@ main.favoritos {
 .bottom-nav .item .label {
   font-size: 0.72rem;
   margin-top: 4px;
+}
+
+/* Dropdown de usuario (index-logued) */
+.user-dropdown {
+  position: fixed;
+  min-width: 220px;
+  background: var(--c1);
+  color: var(--c7);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  padding: 8px;
+  z-index: 2002;
+  opacity: 0;
+  transform: translateY(-4px) scale(0.98);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  pointer-events: none;
+}
+
+.user-dropdown.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.user-dropdown .dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: var(--c7);
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.user-dropdown .dropdown-item i {
+  width: 18px;
+  text-align: center;
+}
+
+.user-dropdown .dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--c3);
 }
 
 .bottom-nav .item.primary {

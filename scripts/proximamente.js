@@ -121,23 +121,17 @@
       }
     });
 
-    // Botones de "Comprar" en favoritos (marcados con data-proximamente)
-    document.querySelectorAll('button[data-proximamente="true"]').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
+    // Cualquier elemento marcado con data-proximamente (delegado, incluye dinámicos)
+    document.addEventListener('click', (e) => {
+      const t = e.target && e.target.closest('[data-proximamente="true"]');
+      if (!t) return;
+      const tag = (t.tagName || '').toLowerCase();
+      if (tag === 'a' || tag === 'button') {
         e.preventDefault();
         e.stopPropagation();
         open();
-      });
-    });
-
-    // Botones de "nav mobile" (marcados con data-proximamente)
-    document.querySelectorAll('.bottom-nav a[data-proximamente="true"]').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        open();
-      });
-    });
+      }
+    }, true);
 
     // Links del footer (excluyendo redes sociales y Freepik)
     document.querySelectorAll('footer a').forEach((a) => {
@@ -153,13 +147,17 @@
       }
     });
 
-    // Botón de usuario (user-menu)
-    document.querySelectorAll('.user-menu').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        open();
+    // Botón de usuario (user-menu) - solo en páginas no logueadas
+    const path = (window.location.pathname || '').toLowerCase();
+    const isLogged = path.endsWith('/index-logued.html') || path.endsWith('index-logued.html');
+    if (!isLogged) {
+      document.querySelectorAll('.user-menu').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          open();
+        });
       });
-    });
+    }
   }
 
   function init() {
