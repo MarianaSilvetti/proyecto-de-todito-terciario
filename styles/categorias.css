@@ -23,15 +23,15 @@
 
 /* Menú flotante de categorías */
 .categories-menu {
-  position: absolute;
-  left: 300px;
+  position: fixed;
+  top: var(--catmenu-top, 0px);
+  left: var(--catmenu-left, 0px);
   background: #D5F0F9;
   border-radius: 0 0 12px 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   display: flex;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-20px);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
   z-index: 999;
   min-width: 700px;
@@ -39,10 +39,30 @@
   overflow: hidden;
 }
 
-.categories-menu.active {
+/* Anchored to the trigger (desktop/tablet >= 1020px) */
+.categories-menu.anchored {
+  transform: translate(0, -20px);
+}
+
+.categories-menu.anchored.active {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translate(0, 0);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0s;
+}
+
+/* Centered mode (<= 1020px) */
+.categories-menu.centered {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -63%) scale(0.98);
+  border-radius: 12px;
+}
+
+.categories-menu.centered.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -63%) scale(1);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0s;
 }
 
@@ -200,10 +220,11 @@ nav {
   background: #0d3f5f;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive <= 1020px: center menu and reduce sizes */
+@media (max-width: 1020px) {
   .categories-menu {
-    min-width: 100%;
+    min-width: 92vw;
+    max-width: 92vw;
     flex-direction: column;
   }
 
@@ -211,16 +232,49 @@ nav {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid #e0e0e0;
+    padding: 0.75rem 0;
+  }
+
+  .category-item {
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
   }
 
   .subcategories-grid {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 1rem;
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .subcategory-circle {
-    width: 80px;
-    height: 80px;
+    width: 86px;
+    height: 86px;
+  }
+}
+
+/* Extra compact <= 768px */
+@media (max-width: 768px) {
+  .categories-menu {
+    min-width: 96vw;
+    max-width: 96vw;
+    flex-direction: column;
+  }
+
+  .categories-list {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0.5rem 0;
+  }
+
+  .subcategories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  .subcategory-circle {
+    width: 72px;
+    height: 72px;
   }
 }

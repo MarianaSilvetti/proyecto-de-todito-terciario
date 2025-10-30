@@ -130,6 +130,15 @@
       });
     });
 
+    // Botones de "nav mobile" (marcados con data-proximamente)
+    document.querySelectorAll('.bottom-nav a[data-proximamente="true"]').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        open();
+      });
+    });
+
     // Links del footer (excluyendo redes sociales y Freepik)
     document.querySelectorAll('footer a').forEach((a) => {
       // Excluir si tiene ícono de redes sociales o es el link de Freepik

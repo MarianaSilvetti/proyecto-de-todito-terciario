@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>De Todito - Polirubro</title>
     <link rel="shortcut icon" href="images/DeTodito-logo-sin.png" />
-    <link rel="stylesheet" href="/styles/styles.css" />
-    <link rel="stylesheet" href="/styles/categorias.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/categorias.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -19,7 +19,7 @@
       <div class="logo">
         <a href="index-logued.html">
           <img
-            src="/images/Logo-Web-De-Todito.png"
+            src="images/Logo-Web-De-Todito.png"
             alt="Logo de De Todito Polirubro"
           />
         </a>
@@ -37,7 +37,7 @@
         <!-- Botón de usuario logueado -->
         <a href="#" class="btn user-menu">
           <span class="avatar" aria-hidden="true">
-            <img src="/images/imagen-perfil.jpeg" alt="Foto de perfil" />
+            <img src="images/imagen-perfil.jpeg" alt="Foto de perfil" />
           </span>
           <span class="username">Usuario</span>
           <i class="fa-solid fa-chevron-down chevron" aria-hidden="true"></i>
@@ -103,16 +103,39 @@
         Imágenes diseñadas por<a href="http://www.freepik.es/">Freepik</a>
       </div>
     </footer>
+    <!-- Bottom mobile navigation -->
+    <nav class="bottom-nav" aria-label="Navegación inferior">
+      <a href="index-logued.html" class="item" aria-label="Inicio">
+        <i class="fa-solid fa-house icon" aria-hidden="true"></i>
+        <span class="label">Inicio</span>
+      </a>
+      <a href="#" class="item" data-proximamente="true" aria-label="Favoritos">
+        <i class="fa-solid fa-heart icon" aria-hidden="true"></i>
+        <span class="label">Favoritos</span>
+      </a>
+      <a href="#" class="item primary" data-proximamente="true" aria-label="Carrito">
+        <span class="icon-container"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i></span>
+        <span class="label">Carrito</span>
+      </a>
+      <a href="#" class="item" data-proximamente="true" aria-label="Tú">
+        <i class="fa-solid fa-user icon" aria-hidden="true"></i>
+        <span class="label">Tú</span>
+      </a>
+      <a href="#" class="item" data-proximamente="true" aria-label="Más">
+        <i class="fa-solid fa-bars icon" aria-hidden="true"></i>
+        <span class="label">Más</span>
+      </a>
+    </nav>
   </body>
   <script
     src="https://kit.fontawesome.com/38dd05b7b5.js"
     crossorigin="anonymous"
   ></script>
-  <script src="/scripts/carrusel.js"></script>
-  <script src="/scripts/listas.js"></script>
-  <script src="/scripts/categorias.js"></script>
-  <script src="/scripts/productos.js"></script>
-  <script src="/scripts/carrito-modal.js"></script>
-  <script src="/scripts/favoritos.js"></script>
-  <script src="/scripts/proximamente.js"></script>
+  <script src="scripts/carrusel.js"></script>
+  <script src="scripts/listas.js"></script>
+  <script src="scripts/categorias.js"></script>
+  <script src="scripts/productos.js"></script>
+  <script src="scripts/carrito-modal.js"></script>
+  <script src="scripts/favoritos.js"></script>
+  <script src="scripts/proximamente.js"></script>
 </html>

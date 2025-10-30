@@ -16,8 +16,10 @@
 
   // Función para mostrar el menú (por click)
   function showMenu() {
+    updateMenuPosition();
     categoriesMenu.classList.add('active');
     categoriesOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Bloquear scroll
     if (categoryBtn) {
       categoryBtn.setAttribute('aria-expanded', 'true');
       categoryBtn.classList.add('active');
@@ -39,10 +41,34 @@
   function hideMenu() {
     categoriesMenu.classList.remove('active');
     categoriesOverlay.classList.remove('active');
+    document.body.style.overflow = ''; // Restaurar scroll
     if (categoryBtn) {
       categoryBtn.setAttribute('aria-expanded', 'false');
       categoryBtn.classList.remove('active');
     }
+  }
+
+  // Actualiza la posición del menú según tamaño de pantalla
+  function updateMenuPosition() {
+    if (!categoriesMenu) return;
+
+    const isSmall = window.innerWidth <= 1020;
+    if (isSmall || !categoryBtn) {
+      categoriesMenu.classList.remove('anchored');
+      categoriesMenu.classList.add('centered');
+      categoriesMenu.style.removeProperty('--catmenu-top');
+      categoriesMenu.style.removeProperty('--catmenu-left');
+      return;
+    }
+
+    // Posicionar respecto al botón (abajo a la derecha)
+    const rect = categoryBtn.getBoundingClientRect();
+    const top = Math.round(rect.bottom + 8);
+    const left = Math.round(rect.right + 8); // place menu to the right of the button
+    categoriesMenu.style.setProperty('--catmenu-top', top + 'px');
+    categoriesMenu.style.setProperty('--catmenu-left', left + 'px');
+    categoriesMenu.classList.remove('centered');
+    categoriesMenu.classList.add('anchored');
   }
 
   // Función para renderizar subcategorías
@@ -134,6 +160,14 @@
     }
   });
 
+  // Reposicionar en resize y cuando se hace scroll (si el menú está abierto)
+  window.addEventListener('resize', () => {
+    if (categoriesMenu.classList.contains('active')) updateMenuPosition();
+  });
+  window.addEventListener('scroll', () => {
+    if (categoriesMenu.classList.contains('active')) updateMenuPosition();
+  }, { passive: true });
+
   // Renderizar subcategorías por defecto (blanquería)
   renderSubcategories('blanqueria');
   
@@ -141,4 +175,7 @@
   if (categoryItems.length > 0) {
     categoryItems[0].classList.add('active');
   }
+
+  // Posición inicial (por si cambia layout antes de la primera apertura)
+  updateMenuPosition();
 })();
