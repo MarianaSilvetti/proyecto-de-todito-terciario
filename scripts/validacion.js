@@ -256,7 +256,8 @@
 (function () {
   'use strict';
 
-  const LOGO_SELECTOR = '.logo-container a img';
+  // Selector mejorado que captura logos en login, registro y recuperar
+  const LOGO_SELECTOR = '.logo-container a img, .logo-container img.logo';
   const TOOLTIP_TEXT = 'Clickea para volver al inicio';
   const TOOLTIP_DURATION = 3000;
 
